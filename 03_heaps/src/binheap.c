@@ -207,7 +207,6 @@ const void *insert_value(binheap_type *H, const void *value)
     }
 
     if (!H->leq(value, H->max_order_value) || H->num_of_elem == 0)
-    //if (H->num_of_elem == 0 || H->leq(H->max_order_value, value))
     {
         memcpy(H->max_order_value, value, H->key_size);
     }
