@@ -55,7 +55,7 @@ void heapify(binheap_type *H, unsigned int node)
         child = RIGHT_CHILD(node);
 
         if (VALID_NODE(H, child) && 
-            H->leq(ADDR(H, child), ADDR(H, node))
+            H->leq(ADDR(H, child), ADDR(H, destination_node))
            )
         {
             destination_node = child;
@@ -64,7 +64,7 @@ void heapify(binheap_type *H, unsigned int node)
         child = LEFT_CHILD(node);
 
         if (VALID_NODE(H, child) && 
-            H->leq(ADDR(H, child), ADDR(H, node))
+            H->leq(ADDR(H, child), ADDR(H, destination_node))
            )
         {
             destination_node = child;
@@ -95,8 +95,7 @@ const void *extract_min(binheap_type *H)
     //we need to restore the heap porperty
     heapify(H, 0);
 
-    //return ADDR(H, H->num_of_elem+1);
-    return ADDR(H, H->num_of_elem);
+    return ADDR(H, H->num_of_elem+1);
 }
 
 
@@ -184,6 +183,7 @@ const void *decrease_key(binheap_type *H, void *node, const void *value)
     //while node is not root and parent > node
     while (node_index != 0 && !H->leq(parent, node))
     {
+        swap_keys(H, parent_index, node_index);
         node = parent;
         node_index = parent_index;
 
@@ -201,7 +201,7 @@ const void *insert_value(binheap_type *H, const void *value)
         return NULL;
     }
     
-    if (H->num_of_elem == 0 || !H->leq(value, H->max_order_value))
+    if (!H->leq(value, H->max_order_value) || H->num_of_elem == 0)
     {
         memcpy(H->max_order_value, value, H->key_size);
     }
