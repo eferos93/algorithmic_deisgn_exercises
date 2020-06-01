@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eferos93/github/AD_bin_heaps
+CMAKE_SOURCE_DIR = /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eferos93/github/AD_bin_heaps
+CMAKE_BINARY_DIR = /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -113,6 +102,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -126,9 +126,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eferos93/github/AD_bin_heaps/CMakeFiles /home/eferos93/github/AD_bin_heaps/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eferos93/github/AD_bin_heaps/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -157,6 +157,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_insert
+
+# Build rule for target.
+test_insert: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_insert
+.PHONY : test_insert
+
+# fast build rule for target.
+test_insert/fast:
+	$(MAKE) -f CMakeFiles/test_insert.dir/build.make CMakeFiles/test_insert.dir/build
+.PHONY : test_insert/fast
+
+#=============================================================================
+# Target rules for targets named test_delete_min
+
+# Build rule for target.
+test_delete_min: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_delete_min
+.PHONY : test_delete_min
+
+# fast build rule for target.
+test_delete_min/fast:
+	$(MAKE) -f CMakeFiles/test_delete_min.dir/build.make CMakeFiles/test_delete_min.dir/build
+.PHONY : test_delete_min/fast
+
+#=============================================================================
 # Target rules for targets named common
 
 # Build rule for target.
@@ -181,32 +207,6 @@ binheap: cmake_check_build_system
 binheap/fast:
 	$(MAKE) -f CMakeFiles/binheap.dir/build.make CMakeFiles/binheap.dir/build
 .PHONY : binheap/fast
-
-#=============================================================================
-# Target rules for targets named test_delete_min
-
-# Build rule for target.
-test_delete_min: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_delete_min
-.PHONY : test_delete_min
-
-# fast build rule for target.
-test_delete_min/fast:
-	$(MAKE) -f CMakeFiles/test_delete_min.dir/build.make CMakeFiles/test_delete_min.dir/build
-.PHONY : test_delete_min/fast
-
-#=============================================================================
-# Target rules for targets named test_insert
-
-# Build rule for target.
-test_insert: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_insert
-.PHONY : test_insert
-
-# fast build rule for target.
-test_insert/fast:
-	$(MAKE) -f CMakeFiles/test_insert.dir/build.make CMakeFiles/test_insert.dir/build
-.PHONY : test_insert/fast
 
 src/binheap.o: src/binheap.c.o
 
@@ -430,16 +430,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... common"
-	@echo "... binheap"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... test_delete_min"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... test_insert"
+	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test_insert"
+	@echo "... test_delete_min"
+	@echo "... common"
+	@echo "... binheap"
 	@echo "... src/binheap.o"
 	@echo "... src/binheap.i"
 	@echo "... src/binheap.s"

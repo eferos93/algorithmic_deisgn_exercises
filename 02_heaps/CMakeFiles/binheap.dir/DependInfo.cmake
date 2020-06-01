@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/eferos93/github/AD_bin_heaps/src/binheap.c" "/home/eferos93/github/AD_bin_heaps/CMakeFiles/binheap.dir/src/binheap.c.o"
-  "/home/eferos93/github/AD_bin_heaps/src/total_orders.c" "/home/eferos93/github/AD_bin_heaps/CMakeFiles/binheap.dir/src/total_orders.c.o"
+  "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/src/binheap.c" "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles/binheap.dir/src/binheap.c.o"
+  "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/src/total_orders.c" "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles/binheap.dir/src/total_orders.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/eferos93/github/AD_bin_heaps
+# Install script for directory: /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -52,7 +52,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/lib" TYPE SHARED_LIBRARY FILES "/home/eferos93/github/AD_bin_heaps/libbinheap.so")
+file(INSTALL DESTINATION "/usr/lib" TYPE SHARED_LIBRARY FILES "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/libbinheap.so")
   if(EXISTS "$ENV{DESTDIR}/usr/lib/libbinheap.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib/libbinheap.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -69,5 +69,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/eferos93/github/AD_bin_heaps/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

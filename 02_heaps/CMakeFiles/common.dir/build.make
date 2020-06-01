@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eferos93/github/AD_bin_heaps
+CMAKE_SOURCE_DIR = /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eferos93/github/AD_bin_heaps
+CMAKE_BINARY_DIR = /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps
 
 # Include any dependencies generated for this target.
 include CMakeFiles/common.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/common.dir/flags.make
 
 CMakeFiles/common.dir/tests/common/array_functions.c.o: CMakeFiles/common.dir/flags.make
 CMakeFiles/common.dir/tests/common/array_functions.c.o: tests/common/array_functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eferos93/github/AD_bin_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/common.dir/tests/common/array_functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/common.dir/tests/common/array_functions.c.o   -c /home/eferos93/github/AD_bin_heaps/tests/common/array_functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/common.dir/tests/common/array_functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/common.dir/tests/common/array_functions.c.o   -c /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/array_functions.c
 
 CMakeFiles/common.dir/tests/common/array_functions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/common.dir/tests/common/array_functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eferos93/github/AD_bin_heaps/tests/common/array_functions.c > CMakeFiles/common.dir/tests/common/array_functions.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/array_functions.c > CMakeFiles/common.dir/tests/common/array_functions.c.i
 
 CMakeFiles/common.dir/tests/common/array_functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/common.dir/tests/common/array_functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eferos93/github/AD_bin_heaps/tests/common/array_functions.c -o CMakeFiles/common.dir/tests/common/array_functions.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/array_functions.c -o CMakeFiles/common.dir/tests/common/array_functions.c.s
 
 CMakeFiles/common.dir/tests/common/array_functions.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/common.dir/tests/common/array_functions.c.o.provides.build: CMakeFile
 
 CMakeFiles/common.dir/tests/common/heap_functions.c.o: CMakeFiles/common.dir/flags.make
 CMakeFiles/common.dir/tests/common/heap_functions.c.o: tests/common/heap_functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eferos93/github/AD_bin_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/common.dir/tests/common/heap_functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/common.dir/tests/common/heap_functions.c.o   -c /home/eferos93/github/AD_bin_heaps/tests/common/heap_functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/common.dir/tests/common/heap_functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/common.dir/tests/common/heap_functions.c.o   -c /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/heap_functions.c
 
 CMakeFiles/common.dir/tests/common/heap_functions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/common.dir/tests/common/heap_functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eferos93/github/AD_bin_heaps/tests/common/heap_functions.c > CMakeFiles/common.dir/tests/common/heap_functions.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/heap_functions.c > CMakeFiles/common.dir/tests/common/heap_functions.c.i
 
 CMakeFiles/common.dir/tests/common/heap_functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/common.dir/tests/common/heap_functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eferos93/github/AD_bin_heaps/tests/common/heap_functions.c -o CMakeFiles/common.dir/tests/common/heap_functions.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/heap_functions.c -o CMakeFiles/common.dir/tests/common/heap_functions.c.s
 
 CMakeFiles/common.dir/tests/common/heap_functions.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/common.dir/tests/common/heap_functions.c.o.provides.build: CMakeFiles
 
 CMakeFiles/common.dir/tests/common/test_set.c.o: CMakeFiles/common.dir/flags.make
 CMakeFiles/common.dir/tests/common/test_set.c.o: tests/common/test_set.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eferos93/github/AD_bin_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/common.dir/tests/common/test_set.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/common.dir/tests/common/test_set.c.o   -c /home/eferos93/github/AD_bin_heaps/tests/common/test_set.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/common.dir/tests/common/test_set.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/common.dir/tests/common/test_set.c.o   -c /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/test_set.c
 
 CMakeFiles/common.dir/tests/common/test_set.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/common.dir/tests/common/test_set.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eferos93/github/AD_bin_heaps/tests/common/test_set.c > CMakeFiles/common.dir/tests/common/test_set.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/test_set.c > CMakeFiles/common.dir/tests/common/test_set.c.i
 
 CMakeFiles/common.dir/tests/common/test_set.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/common.dir/tests/common/test_set.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eferos93/github/AD_bin_heaps/tests/common/test_set.c -o CMakeFiles/common.dir/tests/common/test_set.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/test_set.c -o CMakeFiles/common.dir/tests/common/test_set.c.s
 
 CMakeFiles/common.dir/tests/common/test_set.c.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/common.dir/tests/common/test_set.c.o.provides.build: CMakeFiles/commo
 
 CMakeFiles/common.dir/tests/common/test_time.c.o: CMakeFiles/common.dir/flags.make
 CMakeFiles/common.dir/tests/common/test_time.c.o: tests/common/test_time.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eferos93/github/AD_bin_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/common.dir/tests/common/test_time.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/common.dir/tests/common/test_time.c.o   -c /home/eferos93/github/AD_bin_heaps/tests/common/test_time.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/common.dir/tests/common/test_time.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/common.dir/tests/common/test_time.c.o   -c /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/test_time.c
 
 CMakeFiles/common.dir/tests/common/test_time.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/common.dir/tests/common/test_time.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eferos93/github/AD_bin_heaps/tests/common/test_time.c > CMakeFiles/common.dir/tests/common/test_time.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/test_time.c > CMakeFiles/common.dir/tests/common/test_time.c.i
 
 CMakeFiles/common.dir/tests/common/test_time.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/common.dir/tests/common/test_time.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eferos93/github/AD_bin_heaps/tests/common/test_time.c -o CMakeFiles/common.dir/tests/common/test_time.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/test_time.c -o CMakeFiles/common.dir/tests/common/test_time.c.s
 
 CMakeFiles/common.dir/tests/common/test_time.c.o.requires:
 
@@ -169,7 +169,7 @@ libcommon.a: CMakeFiles/common.dir/tests/common/test_set.c.o
 libcommon.a: CMakeFiles/common.dir/tests/common/test_time.c.o
 libcommon.a: CMakeFiles/common.dir/build.make
 libcommon.a: CMakeFiles/common.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eferos93/github/AD_bin_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libcommon.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libcommon.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/common.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/common.dir/link.txt --verbose=$(VERBOSE)
 
@@ -190,6 +190,6 @@ CMakeFiles/common.dir/clean:
 .PHONY : CMakeFiles/common.dir/clean
 
 CMakeFiles/common.dir/depend:
-	cd /home/eferos93/github/AD_bin_heaps && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eferos93/github/AD_bin_heaps /home/eferos93/github/AD_bin_heaps /home/eferos93/github/AD_bin_heaps /home/eferos93/github/AD_bin_heaps /home/eferos93/github/AD_bin_heaps/CMakeFiles/common.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles/common.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/common.dir/depend
 

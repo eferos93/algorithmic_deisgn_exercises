@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eferos93/github/AD_bin_heaps
+CMAKE_SOURCE_DIR = /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eferos93/github/AD_bin_heaps
+CMAKE_BINARY_DIR = /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps
 
 # Include any dependencies generated for this target.
 include CMakeFiles/binheap.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/binheap.dir/flags.make
 
 CMakeFiles/binheap.dir/src/binheap.c.o: CMakeFiles/binheap.dir/flags.make
 CMakeFiles/binheap.dir/src/binheap.c.o: src/binheap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eferos93/github/AD_bin_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/binheap.dir/src/binheap.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/binheap.dir/src/binheap.c.o   -c /home/eferos93/github/AD_bin_heaps/src/binheap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/binheap.dir/src/binheap.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/binheap.dir/src/binheap.c.o   -c /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/src/binheap.c
 
 CMakeFiles/binheap.dir/src/binheap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/binheap.dir/src/binheap.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eferos93/github/AD_bin_heaps/src/binheap.c > CMakeFiles/binheap.dir/src/binheap.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/src/binheap.c > CMakeFiles/binheap.dir/src/binheap.c.i
 
 CMakeFiles/binheap.dir/src/binheap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/binheap.dir/src/binheap.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eferos93/github/AD_bin_heaps/src/binheap.c -o CMakeFiles/binheap.dir/src/binheap.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/src/binheap.c -o CMakeFiles/binheap.dir/src/binheap.c.s
 
 CMakeFiles/binheap.dir/src/binheap.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/binheap.dir/src/binheap.c.o.provides.build: CMakeFiles/binheap.dir/sr
 
 CMakeFiles/binheap.dir/src/total_orders.c.o: CMakeFiles/binheap.dir/flags.make
 CMakeFiles/binheap.dir/src/total_orders.c.o: src/total_orders.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eferos93/github/AD_bin_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/binheap.dir/src/total_orders.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/binheap.dir/src/total_orders.c.o   -c /home/eferos93/github/AD_bin_heaps/src/total_orders.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/binheap.dir/src/total_orders.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/binheap.dir/src/total_orders.c.o   -c /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/src/total_orders.c
 
 CMakeFiles/binheap.dir/src/total_orders.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/binheap.dir/src/total_orders.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eferos93/github/AD_bin_heaps/src/total_orders.c > CMakeFiles/binheap.dir/src/total_orders.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/src/total_orders.c > CMakeFiles/binheap.dir/src/total_orders.c.i
 
 CMakeFiles/binheap.dir/src/total_orders.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/binheap.dir/src/total_orders.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eferos93/github/AD_bin_heaps/src/total_orders.c -o CMakeFiles/binheap.dir/src/total_orders.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/src/total_orders.c -o CMakeFiles/binheap.dir/src/total_orders.c.s
 
 CMakeFiles/binheap.dir/src/total_orders.c.o.requires:
 
@@ -117,7 +117,7 @@ libbinheap.so: CMakeFiles/binheap.dir/src/binheap.c.o
 libbinheap.so: CMakeFiles/binheap.dir/src/total_orders.c.o
 libbinheap.so: CMakeFiles/binheap.dir/build.make
 libbinheap.so: CMakeFiles/binheap.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eferos93/github/AD_bin_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared library libbinheap.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared library libbinheap.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/binheap.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -135,6 +135,6 @@ CMakeFiles/binheap.dir/clean:
 .PHONY : CMakeFiles/binheap.dir/clean
 
 CMakeFiles/binheap.dir/depend:
-	cd /home/eferos93/github/AD_bin_heaps && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eferos93/github/AD_bin_heaps /home/eferos93/github/AD_bin_heaps /home/eferos93/github/AD_bin_heaps /home/eferos93/github/AD_bin_heaps /home/eferos93/github/AD_bin_heaps/CMakeFiles/binheap.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps /home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles/binheap.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/binheap.dir/depend
 

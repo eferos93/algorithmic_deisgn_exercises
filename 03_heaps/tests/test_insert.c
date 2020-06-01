@@ -36,9 +36,21 @@ int main(int argc, char *argv[])
 
     printf("Max Heap\n");
     print_heap(maxH, int_printer);
+    for (size_t i = 0; i < maxH->max_size; i++)
+    {
+      printf(", ");
+      int_printer((maxH->A)+i*maxH->key_size);
+    }
+    printf("\n");
 
     printf("\nMin Heap\n");
     print_heap(minH, int_printer);
+    for (size_t i = 0; i < minH->max_size; i++)
+    {
+      printf(", ");
+      int_printer((minH->A)+i*minH->key_size);
+    }
+
     printf("\n");
 
   } while (!is_heap_empty(minH));

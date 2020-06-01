@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/eferos93/github/AD_bin_heaps/tests/common/array_functions.c" "/home/eferos93/github/AD_bin_heaps/CMakeFiles/common.dir/tests/common/array_functions.c.o"
-  "/home/eferos93/github/AD_bin_heaps/tests/common/heap_functions.c" "/home/eferos93/github/AD_bin_heaps/CMakeFiles/common.dir/tests/common/heap_functions.c.o"
-  "/home/eferos93/github/AD_bin_heaps/tests/common/test_set.c" "/home/eferos93/github/AD_bin_heaps/CMakeFiles/common.dir/tests/common/test_set.c.o"
-  "/home/eferos93/github/AD_bin_heaps/tests/common/test_time.c" "/home/eferos93/github/AD_bin_heaps/CMakeFiles/common.dir/tests/common/test_time.c.o"
+  "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/array_functions.c" "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles/common.dir/tests/common/array_functions.c.o"
+  "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/heap_functions.c" "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles/common.dir/tests/common/heap_functions.c.o"
+  "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/test_set.c" "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles/common.dir/tests/common/test_set.c.o"
+  "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/tests/common/test_time.c" "/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/CMakeFiles/common.dir/tests/common/test_time.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

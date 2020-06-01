@@ -95,7 +95,8 @@ const void *extract_min(binheap_type *H)
     //we need to restore the heap porperty
     heapify(H, 0);
 
-    return ADDR(H, H->num_of_elem+1);
+    //return ADDR(H, H->num_of_elem+1);
+    return ADDR(H, H->num_of_elem);
 }
 
 

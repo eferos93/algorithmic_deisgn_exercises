@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/eferos93/github/AD_bin_heaps/src/binheap.c
+/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/src/binheap.c
 binheap.h
 -
 string.h
@@ -14,7 +14,7 @@ string.h
 stdio.h
 -
 
-/home/eferos93/github/AD_bin_heaps/src/total_orders.c
+/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/src/total_orders.c
 stdlib.h
 -
 

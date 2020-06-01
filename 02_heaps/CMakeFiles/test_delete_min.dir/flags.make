@@ -6,5 +6,5 @@ C_FLAGS = -O3 -DNDEBUG
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/eferos93/github/AD_bin_heaps/include -I/home/eferos93/github/AD_bin_heaps 
+C_INCLUDES = -I/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps/include -I/home/eferos93/github/algorithmic_deisgn_exercises/02_heaps 
 
