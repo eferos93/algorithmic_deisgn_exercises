@@ -59,7 +59,9 @@ void heapify(binheap_type *H, unsigned int node)
         child = RIGHT_CHILD(node);
 
         if (VALID_NODE(H, child) &&
-            H->leq(ADDR(H, child), ADDR(H, node)))
+            H->leq(ADDR(H, child), ADDR(H, destination_node))
+            //H->leq(ADDR(H, child), ADDR(H, node))
+            )
         {
             destination_node = child;
         }
@@ -67,7 +69,9 @@ void heapify(binheap_type *H, unsigned int node)
         child = LEFT_CHILD(node);
 
         if (VALID_NODE(H, child) &&
-            H->leq(ADDR(H, child), ADDR(H, node)))
+            H->leq(ADDR(H, child), ADDR(H, destination_node))
+            //H->leq(ADDR(H, child), ADDR(H, node))
+            )
         {
             destination_node = child;
         }
@@ -202,7 +206,8 @@ const void *insert_value(binheap_type *H, const void *value)
         return NULL;
     }
 
-    if (H->num_of_elem == 0 || !H->leq(value, H->max_order_value))
+    if (!H->leq(value, H->max_order_value) || H->num_of_elem == 0)
+    //if (H->num_of_elem == 0 || H->leq(H->max_order_value, value))
     {
         memcpy(H->max_order_value, value, H->key_size);
     }
