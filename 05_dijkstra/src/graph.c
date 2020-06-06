@@ -1,6 +1,5 @@
 #include <graph.h>
-#include <limits.h>
-#include <binheap.h>
+
 
 node_type *create_nodes(unsigned int num_of_nodes)
 {
@@ -56,6 +55,7 @@ adjacents_type adjacents(graph_type *g, node_type *node, int n)
             adj_nodes[adj_index++] = &(g->nodes)[i];
         }
     }
+    
     adjacents_type adj;
     adj.adj = adj_nodes;
     adj.length = adj_index;
@@ -108,16 +108,35 @@ node_type* getNode(graph_type* g, int key)
 {
     for(int i = 0; i < g->num_nodes; i++)
     {
-        if(g->nodes[i].key == key){ 
+        if(g->nodes[i].key == key)
+        { 
             return (g->nodes + i);
         }
     }
     return NULL;
 }
 
+
+int order_node(const void* node_a, const void* node_b)
+{
+    return leq_int((void *) &(((node_type*) node_a)->key), (void *) &(((node_type*) node_b)->key));
+}
+
+int leq_int(const void *a, const void *b)
+{
+  return *((int*)a)<=*((int*)b);
+}
+
 void dijkstra(graph_type* g, node_type* source)
 {
     initialise(g);
     source->distance_from_source = 0;
-    //binheap_type* queue = build_heap(g->nodes);
+    binheap_type* queue = build_heap((void*) g->nodes, g->num_nodes, g->num_nodes-1, sizeof(int), order_node);
+
+    while (!is_heap_empty(queue))
+    {
+        node_type* u = extract_min(queue);
+        //adjacents(g, u, )
+    }
+    
 }
