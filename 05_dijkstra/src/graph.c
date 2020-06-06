@@ -2,23 +2,32 @@
 #include <limits.h>
 #include <binheap.h>
 
-node_type* create_node(void* key, size_t key_size)
+node_type *create_nodes(unsigned int num_of_nodes)
 {
-    node_type* new_node = (node_type*) malloc(sizeof(node_type));
-    new_node->key = key;
-    new_node->key_size = key_size;
-    new_node->distance_from_source = UINT_MAX;
-    new_node->predecessor = NULL;
+    node_type *new_nodes = (node_type *)malloc(sizeof(node_type)*num_of_nodes);
+    for (size_t i = 0; i < num_of_nodes; i++)
+    {
+        new_nodes[i].key = i;
+        new_nodes[i].distance_from_source = UINT_MAX;
+        new_nodes[i].predecessor = NULL;
+    }
+    
+    //new_node->key = key;
+    //new_node->key_size = key_size;
+    //new_node->distance_from_source = UINT_MAX;
+    //new_node->predecessor = NULL;
 
-    return new_node;
+    return new_nodes;
 }
 
-unsigned int weight(graph_type* g, node_type* from, node_type* to)
+
+
+unsigned int weight(graph_type *g, node_type *from, node_type *to)
 {
-    return g->weights_matrix[ from->key*g->num_nodes + to->key ];
+    return g->weights_matrix[from->key * g->num_nodes + to->key];
 }
 
-
+/*
 int adjacents_len(graph_type* g, node_type* node)
 {
     int n = 0;
@@ -33,20 +42,19 @@ int adjacents_len(graph_type* g, node_type* node)
         
     return n;
 }
-
+*/
 // returns nodes adjacent to a given node
-adjacents_type adjacents(graph_type* g, node_type* node, int n)
+adjacents_type adjacents(graph_type *g, node_type *node, int n)
 {
-    node_type** adj_nodes = (node_type**) malloc(sizeof(node_type*)*n);
+    node_type **adj_nodes = (node_type **)malloc(sizeof(node_type *) * n);
     int adj_index = 0;
-    for(int i = 0; i < g->num_nodes; i++)
+    for (int i = 0; i < g->num_nodes; i++)
     {
         int weight_node_to_i = weight(g, node, &(g->nodes)[i]);
-        if(weight_node_to_i < UINT_MAX && (g->nodes)[i].key != node->key)
+        if (weight_node_to_i < UINT_MAX && (g->nodes)[i].key != node->key)
         {
             adj_nodes[adj_index++] = &(g->nodes)[i];
         }
-            
     }
     adjacents_type adj;
     adj.adj = adj_nodes;
@@ -54,31 +62,62 @@ adjacents_type adjacents(graph_type* g, node_type* node, int n)
     return adj;
 }
 
-graph_type* create_graph(unsigned int* adj_matrix, node_type* nodes, unsigned int num_nodes, size_t key_size)
+graph_type *create_graph(unsigned int *adj_matrix, unsigned int num_nodes)
 {
-    graph_type* graph = (graph_type*) malloc(sizeof(graph_type));
+    graph_type *graph = (graph_type *)malloc(sizeof(graph_type));
     graph->num_nodes = num_nodes;
     graph->weights_matrix = adj_matrix;
-    graph->nodes = nodes;
+    graph->nodes = create_nodes(num_nodes);
     return graph;
 }
 
-void initialise(graph_type* g) 
+void initialise(graph_type *g)
 {
-    int n = g->num_nodes;
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < g->num_nodes; i++)
     {
-        (g->nodes[i]).key = i;
-        (g->nodes[i]).distance_from_source = UINT_MAX;
-        (g->nodes[i]).predecessor = NULL;
+        //(g->nodes[i]).key = i;
+        g->nodes[i].distance_from_source = UINT_MAX;
+        g->nodes[i].predecessor = NULL;
     }
 }
 
-void relax(binheap_type* q, node_type* u, node_type* v, int w)
+void update_distance(binheap_type *queue, node_type *node, unsigned int new_distance)
 {
-    if(u->distance_from_source + w < v->distance_from_source)
+    decrease_key(queue, node->position, new_distance);
+}
+
+void relax(binheap_type *queue, node_type *u, node_type *v, unsigned int weight)
+{
+    if (u->distance_from_source + weight < v->distance_from_source)
     {
-        update_distance(q, v, u->distance_from_source + w);
+        update_distance(queue, v, u->distance_from_source + weight);
         v->predecessor = u;
     }
+}
+
+void relax(node_type *u, node_type *v, unsigned int weight)
+{
+    if (u->distance_from_source + weight < v->distance_from_source)
+    {
+        v->distance_from_source = u->distance_from_source + weight;
+        v->predecessor = u;
+    }
+}
+
+node_type* getNode(graph_type* g, int key)
+{
+    for(int i = 0; i < g->num_nodes; i++)
+    {
+        if(g->nodes[i].key == key){ 
+            return (g->nodes + i);
+        }
+    }
+    return NULL;
+}
+
+void dijkstra(graph_type* g, node_type* source)
+{
+    initialise(g);
+    source->distance_from_source = 0;
+    //binheap_type* queue = build_heap(g->nodes);
 }

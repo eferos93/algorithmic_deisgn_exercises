@@ -14,9 +14,9 @@ typedef struct Graph
 typedef struct Node
 {
     int key;
-    size_t key_size;
+    //size_t key_size;
     int distance_from_source;
-    //int position;
+    unsigned int position; //position inside the heap
     node_type* predecessor;
 } node_type;
 
@@ -26,10 +26,10 @@ typedef struct Adjacents
     node_type** adj;
 } adjacents_type;
 
-struct Node* create_node(void* key, size_t key_size);
+struct Node* create_node(int key);
 
-struct Graph* create_graph(unsigned int* adj_matrix, node_type* nodes, unsigned int num_nodes, size_t key_size);
+graph_type *create_graph(unsigned int *adj_matrix, unsigned int num_nodes);
 
-void dijkstra();
+void dijkstra(graph_type* g, node_type* source);
 
 #endif
