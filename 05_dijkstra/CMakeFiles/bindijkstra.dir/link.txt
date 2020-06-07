@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libbindijkstra.so -o libbindijkstra.so CMakeFiles/bindijkstra.dir/src/binheap.c.o CMakeFiles/bindijkstra.dir/src/graph.c.o CMakeFiles/bindijkstra.dir/src/linked_list.c.o CMakeFiles/bindijkstra.dir/src/total_orders.c.o 

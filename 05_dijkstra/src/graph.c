@@ -1,82 +1,33 @@
 #include <graph.h>
 
 
-node_type *create_nodes(size_t num_of_nodes, linked_list* adj_lists)
+node_type create_node(int key)
 {
-    node_type *new_nodes = (node_type *)malloc(sizeof(node_type)*num_of_nodes);
-    for (size_t i = 0; i < num_of_nodes; i++)
-    {
-        //new_nodes[i] = create_node(i, adj_lists+(i*sizeof(linked_list)));
-        new_nodes[i] = create_node(i, NULL);
-    }
-    
-    //new_node->key = key;
-    //new_node->key_size = key_size;
-    //new_node->distance_from_source = UINT_MAX;
-    //new_node->predecessor = NULL;
-
-    return new_nodes;
-}
-
-node_type create_node(int key, linked_list* adj_list)
-{
-    node_type new_node;// = (node_type*) malloc(sizeof(node_type));
-    new_node.adjacents = adj_list;
+    node_type new_node;
+    new_node.adjacents = NULL;
     new_node.key = key;
     new_node.distance_from_source = UINT_MAX;
     new_node.predecessor = NULL;
     return new_node;
 }
 
-/*
-unsigned int weight(graph_type *g, node_type *from, node_type *to)
+node_type *create_nodes(size_t num_of_nodes, int* keys)
 {
-    return g->weights_matrix[from->key * g->num_nodes + to->key];
-}
-*/
-/*
-int adjacents_len(graph_type* g, node_type* node)
-{
-    int n = 0;
-    for(int i=0; i < g->num_nodes; i++)
+    node_type *new_nodes = (node_type *)malloc(sizeof(node_type)*num_of_nodes);
+    for (size_t i = 0; i < num_of_nodes; i++)
     {
-        if(g->nodes[i].key == node->key)
-        { 
-            continue;
-        }
-        n += (weight(g, node, &(g->nodes)[i])) < UINT_MAX;
+        //new_nodes[i] = create_node(i, adj_lists+(i*sizeof(linked_list)));
+        new_nodes[i] = create_node(keys[i]);
     }
-        
-    return n;
+
+    return new_nodes;
 }
-*/
-// returns nodes adjacent to a given node
-/*
-adjacents_type adjacents(graph_type *g, node_type *node, int n)
-{
-    node_type **adj_nodes = (node_type **)malloc(sizeof(node_type *) * n);
-    int adj_index = 0;
-    for (int i = 0; i < g->num_nodes; i++)
-    {
-        int weight_node_to_i = weight(g, node, &(g->nodes)[i]);
-        if (weight_node_to_i < UINT_MAX && (g->nodes)[i].key != node->key)
-        {
-            adj_nodes[adj_index++] = &(g->nodes)[i];
-        }
-    }
-    
-    adjacents_type adj;
-    adj.adj = adj_nodes;
-    adj.length = adj_index;
-    return adj;
-}
-*/
-graph_type *create_graph(size_t num_nodes, linked_list* adj_lists)
+
+graph_type *create_graph(size_t num_nodes, int* keys)
 {
     graph_type *graph = (graph_type *)malloc(sizeof(graph_type));
     graph->num_nodes = num_nodes;
-    //graph->weights_matrix = adj_matrix;
-    graph->nodes = create_nodes(num_nodes, adj_lists);
+    graph->nodes = create_nodes(num_nodes, keys);
     return graph;
 }
 
@@ -233,4 +184,17 @@ void delete_graph(graph_type* g)
         delete_node(g->nodes + i*sizeof(node_type));
     }
     free(g);
+}
+
+void print_graph(graph_type* g, void (*key_printer)(const void *value))
+{
+    for (size_t i = 0; i < g->num_nodes; i++)
+    {
+        printf("(key: ");
+        key_printer(g->nodes + i*sizeof(node_type));
+        printf(")");
+        print_list(g->nodes[i].adjacents, key_printer);
+        printf("\n");
+    }
+    
 }

@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG  -rdynamic CMakeFiles/test.dir/tests/test.c.o  -o test -Wl,-rpath,/home/eferos93/github/algorithmic_deisgn_exercises/05_dijkstra libbindijkstra.so libcommon.a 

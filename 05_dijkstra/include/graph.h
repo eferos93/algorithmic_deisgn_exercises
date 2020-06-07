@@ -32,13 +32,13 @@ typedef struct Adjacents
 */
 int order_node(const void * node_a, const void* node_b);
 
-node_type create_node(int key, linked_list* adj_list);
-node_type *create_nodes(size_t num_of_nodes, linked_list* adj_lists);
-graph_type* create_graph(size_t num_of_nodes, linked_list* adj_lists);
+node_type create_node(int key);
+node_type *create_nodes(size_t num_of_nodes, int* keys);
+graph_type* create_graph(size_t num_of_nodes, int* keys);
 void dijkstra_minheap(graph_type* g, node_type* source);
 void dijkstra_array(graph_type* g, node_type* source);
 void delete_graph(graph_type* g);
 void delete_node(node_type* node);
-
+void print_graph(graph_type* g, void (*key_printer)(const void *value));
 
 #endif

@@ -22,4 +22,6 @@ linked_list* create_linked_list(void* element, size_t elem_size, unsigned int we
 void insert_new_node(linked_list* list, void* element, unsigned int weight);
 void delete_linked_list_node(linked_list* list, void* element);
 void delete_linked_list(linked_list* list);
+void print_list(linked_list* list, void (*key_printer)(const void *value));
+int in_list(linked_list* list_node, void* element);
 #endif

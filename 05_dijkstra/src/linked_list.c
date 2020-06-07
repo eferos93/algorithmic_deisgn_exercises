@@ -58,3 +58,29 @@ void delete_linked_list(linked_list* list)
     }
     free(list);
 }
+
+void print_list(linked_list* list, void (*key_printer)(const void *value))
+{
+    list_node* current = list->head;
+    while (current)
+    {
+        printf("->(key: ");
+        key_printer(current->element);
+        printf(", w: %u)", current->weight);
+    }
+    
+}
+
+int in_list(linked_list* list, void* element)
+{
+    list_node* current = list->head;
+    while (current)
+    {
+        if (current->element == element)
+        {
+            return 1;
+        }
+        current = current->next;
+    }
+    return 0;
+}
