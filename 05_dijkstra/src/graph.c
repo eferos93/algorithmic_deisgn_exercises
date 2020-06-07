@@ -164,7 +164,7 @@ void dijkstra_array(graph_type* g, node_type* source)
             current = current->next;
         }
     }
-    printf("%ld", queue->head);
+    //printf("%ld", queue->head);
     free(queue);
     //delete_linked_list(queue);
 }

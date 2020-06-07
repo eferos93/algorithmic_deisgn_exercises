@@ -1,7 +1,7 @@
 #include <graph.h>
 #include <time.h>
 //#include <common/test_set.h>
-#define NUM_TESTS 1
+#define NUM_TESTS 3
 void int_printer(const void *value)
 {
     printf("%d", (((node_type *)value)->key));
