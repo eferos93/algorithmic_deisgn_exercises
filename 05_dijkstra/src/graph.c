@@ -6,9 +6,10 @@ node_type *create_nodes(unsigned int num_of_nodes)
     node_type *new_nodes = (node_type *)malloc(sizeof(node_type)*num_of_nodes);
     for (size_t i = 0; i < num_of_nodes; i++)
     {
-        new_nodes[i].key = i;
-        new_nodes[i].distance_from_source = UINT_MAX;
-        new_nodes[i].predecessor = NULL;
+        //new_nodes[i].key = i;
+        //new_nodes[i].distance_from_source = UINT_MAX;
+        //new_nodes[i].predecessor = NULL;
+        new_nodes[i] = create_node(i);
     }
     
     //new_node->key = key;
@@ -19,13 +20,22 @@ node_type *create_nodes(unsigned int num_of_nodes)
     return new_nodes;
 }
 
+node_type create_node(int key)
+{
+    node_type new_node;// = (node_type*) malloc(sizeof(node_type));
+    new_node.adjacents = NULL;
+    new_node.key = key;
+    new_node.distance_from_source = UINT_MAX;
+    new_node.predecessor = NULL;
+    return new_node;
+}
 
-
+/*
 unsigned int weight(graph_type *g, node_type *from, node_type *to)
 {
     return g->weights_matrix[from->key * g->num_nodes + to->key];
 }
-
+*/
 /*
 int adjacents_len(graph_type* g, node_type* node)
 {
@@ -43,6 +53,7 @@ int adjacents_len(graph_type* g, node_type* node)
 }
 */
 // returns nodes adjacent to a given node
+/*
 adjacents_type adjacents(graph_type *g, node_type *node, int n)
 {
     node_type **adj_nodes = (node_type **)malloc(sizeof(node_type *) * n);
@@ -61,19 +72,19 @@ adjacents_type adjacents(graph_type *g, node_type *node, int n)
     adj.length = adj_index;
     return adj;
 }
-
-graph_type *create_graph(unsigned int *adj_matrix, unsigned int num_nodes)
+*/
+graph_type *create_graph(unsigned int num_nodes)
 {
     graph_type *graph = (graph_type *)malloc(sizeof(graph_type));
     graph->num_nodes = num_nodes;
-    graph->weights_matrix = adj_matrix;
+    //graph->weights_matrix = adj_matrix;
     graph->nodes = create_nodes(num_nodes);
     return graph;
 }
 
 void initialise(graph_type *g)
 {
-    for (int i = 0; i < g->num_nodes; i++)
+    for (size_t i = 0; i < g->num_nodes; i++)
     {
         //(g->nodes[i]).key = i;
         g->nodes[i].distance_from_source = UINT_MAX;
