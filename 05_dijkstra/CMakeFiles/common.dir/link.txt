@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcommon.a  CMakeFiles/common.dir/tests/common/test_set.c.o CMakeFiles/common.dir/tests/common/test_time.c.o
-/usr/bin/ranlib libcommon.a

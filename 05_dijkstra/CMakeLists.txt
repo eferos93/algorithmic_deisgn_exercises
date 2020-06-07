@@ -20,7 +20,7 @@ set(INCLUDE_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/include)
 set(LIBRARY_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
 
 set( TESTS_SRC_DIR "${PROJECT_SOURCE_DIR}/tests" )
-set( TESTS_COMMON_SRC_DIR "${TESTS_SRC_DIR}/common" )
+#set( TESTS_COMMON_SRC_DIR "${TESTS_SRC_DIR}/common" )
 SET( LIB_SRC_DIR "${PROJECT_SOURCE_DIR}/src")
 SET( LIB_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")
 
@@ -43,14 +43,14 @@ include_directories(${INCLUDE_DIRS} )
 
 include_directories("${PROJECT_BINARY_DIR}" "${PROJECT_SOURCE_DIR}/include" )
 
-FILE (GLOB TESTS_COMMON_SOURCES "${TESTS_COMMON_SRC_DIR}/*.c"
-	                            "${TESTS_COMMON_SRC_DIR}/*.h")
-add_library("common" ${TESTS_COMMON_SOURCES})
+#FILE (GLOB TESTS_COMMON_SOURCES "${TESTS_COMMON_SRC_DIR}/*.c"
+#	                            "${TESTS_COMMON_SRC_DIR}/*.h")
+#add_library("common" ${TESTS_COMMON_SOURCES})
 
-set( EXECUTABLES "test")
+set( EXECUTABLES "test_dijkstra")
 foreach( EXECUTABLE ${EXECUTABLES} )
    add_executable(${EXECUTABLE} "${TESTS_SRC_DIR}/${EXECUTABLE}.c")
-   target_link_libraries(${EXECUTABLE} ${PROJECT_LIB_NAME} "common")
+   target_link_libraries(${EXECUTABLE} ${PROJECT_LIB_NAME} )#"common")
 endforeach( EXECUTABLE ${EXECUTABLES} )
 
 #install( TARGETS ${EXECUTABLES}

@@ -245,7 +245,6 @@ const void *insert_value(binheap_type *H, const void *value)
     memcpy(new_node_addr, H->max_order_value, H->key_size);
     size_t * new_node =ADDR_KEY_POS(H, H->num_of_elem);
 	*new_node = H->num_of_elem_A;
-    //*ADDR_REV_POS(H, H->num_of_elem/*_A*/) = H->num_of_elem;
     H->rev_pos[H->num_of_elem_A] = H->num_of_elem;
 
     H->num_of_elem_A++;

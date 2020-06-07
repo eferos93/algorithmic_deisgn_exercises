@@ -1,15 +1,6 @@
 #include <graph.h>
+#include <stdio.h>
 
-
-node_type create_node(int key)
-{
-    node_type new_node;
-    new_node.adjacents = NULL;
-    new_node.key = key;
-    new_node.distance_from_source = UINT_MAX;
-    new_node.predecessor = NULL;
-    return new_node;
-}
 
 node_type *create_nodes(size_t num_of_nodes, int* keys)
 {
@@ -17,17 +8,30 @@ node_type *create_nodes(size_t num_of_nodes, int* keys)
     for (size_t i = 0; i < num_of_nodes; i++)
     {
         //new_nodes[i] = create_node(i, adj_lists+(i*sizeof(linked_list)));
-        new_nodes[i] = create_node(keys[i]);
+        //new_nodes[i] = create_node(keys[i]);
+        new_nodes[i].adjacents = NULL;
+        new_nodes[i].key = keys[i];
+        new_nodes[i].distance_from_source = UINT_MAX;
+        new_nodes[i].predecessor = NULL;
     }
 
     return new_nodes;
 }
 
-graph_type *create_graph(size_t num_nodes, int* keys)
+graph_type *create_graph(size_t num_nodes, int * keys)
 {
     graph_type *graph = (graph_type *)malloc(sizeof(graph_type));
     graph->num_nodes = num_nodes;
     graph->nodes = create_nodes(num_nodes, keys);
+    /*graph->nodes = (node_type*) malloc(sizeof(node_type)*num_nodes);
+    for (size_t i = 0; i < num_nodes; i++)
+    {
+        graph->nodes[i].key = keys[i];
+        graph->nodes[i].adjacents = NULL;
+        graph->nodes[i].distance_from_source = UINT_MAX;
+        graph->nodes[i].predecessor = NULL;
+    }
+    */
     return graph;
 }
 
@@ -43,7 +47,7 @@ void initialise(graph_type *g)
 
 void update_distance(binheap_type *queue, node_type *node, unsigned int new_distance)
 {
-    decrease_key(queue, (void*) node, new_distance);
+    decrease_key(queue, (void*) node, &(new_distance));
 }
 
 /**
@@ -75,19 +79,6 @@ void relax_array(node_type *u, node_type *v, size_t weight)
         v->predecessor = u;
     }
 }
-/*
-node_type* getNode(graph_type* g, int key)
-{
-    for(int i = 0; i < g->num_nodes; i++)
-    {
-        if(g->nodes[i].key == key)
-        { 
-            return (g->nodes + i);
-        }
-    }
-    return NULL;
-}
-*/
 
 int order_node(const void* node_a, const void* node_b)
 {
@@ -99,11 +90,11 @@ void dijkstra_minheap(graph_type* g, node_type* source)
 {
     initialise(g);
     source->distance_from_source = 0;
-    binheap_type* queue = build_heap((void*) g->nodes, g->num_nodes, g->num_nodes-1, sizeof(unsigned int), order_node);
+    binheap_type* queue = build_heap((void*) g->nodes, g->num_nodes, g->num_nodes, sizeof(node_type), order_node);
 
     while (!is_heap_empty(queue))
     {
-        node_type* u = extract_min(queue);
+        node_type* u = (node_type*) extract_min(queue);
         list_node* current = u->adjacents->head;
         while (current)
         {
@@ -135,8 +126,12 @@ node_type* extract_min_array(linked_list* nodes)
         before_current = current;
         current = current->next;
     }
+
+    if (before_min)
+    {
+        before_min->next = min->next;
+    }
     
-    before_min->next = min->next;
     free(min);
     nodes->length--;
     return min_node;
@@ -169,29 +164,29 @@ void dijkstra_array(graph_type* g, node_type* source)
             current = current->next;
         }
     }
+    printf("%ld", queue->head);
     free(queue);
+    //delete_linked_list(queue);
 }
 
-void delete_node(node_type* node)
-{
-    free(node->adjacents);
-    free(node);
-}
+
 void delete_graph(graph_type* g)
 {
-    for (size_t i = 0; i < g->nodes; i++)
+    for (size_t i = 0; i < g->num_nodes; i++)
     {
-        delete_node(g->nodes + i*sizeof(node_type));
+        delete_linked_list(g->nodes[i].adjacents);
     }
+    free(g->nodes);
     free(g);
 }
 
 void print_graph(graph_type* g, void (*key_printer)(const void *value))
 {
+    printf("\n");
     for (size_t i = 0; i < g->num_nodes; i++)
     {
         printf("(key: ");
-        key_printer(g->nodes + i*sizeof(node_type));
+        printf("%d", g->nodes[i].key);
         printf(")");
         print_list(g->nodes[i].adjacents, key_printer);
         printf("\n");

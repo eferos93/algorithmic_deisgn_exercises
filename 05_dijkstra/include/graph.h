@@ -6,30 +6,21 @@
 #include <binheap.h>
 #include <linked_list.h>
 
-typedef struct Graph
-{
-    size_t num_nodes;
-    //unsigned int* weights_matrix; //adj matrix
-    node_type* nodes;
-} graph_type;
-
-
 typedef struct Node
 {
     int key;
-    //size_t key_size;
-    linked_list* adjacents;
     size_t distance_from_source;
-    //unsigned int position; //position inside the heap
-    node_type* predecessor;
+    linked_list* adjacents;
+    struct Node* predecessor;
 } node_type;
-/*
-typedef struct Adjacents
+
+typedef struct Graph
 {
-    unsigned int length;
-    node_type** adj;
-} adjacents_type;
-*/
+    size_t num_nodes;
+    //adj matrix
+    node_type* nodes;
+} graph_type;
+
 int order_node(const void * node_a, const void* node_b);
 
 node_type create_node(int key);

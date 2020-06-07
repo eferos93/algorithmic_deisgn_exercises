@@ -1,0 +1,2 @@
+Size	Dijkstra Heap	Dijkstra Array
+2^7	0.000479	0.000464

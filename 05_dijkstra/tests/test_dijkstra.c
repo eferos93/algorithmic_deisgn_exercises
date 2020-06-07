@@ -1,7 +1,7 @@
 #include <graph.h>
 #include <time.h>
-#include <common/test_set.h>
-#define NUM_TESTS 10
+//#include <common/test_set.h>
+#define NUM_TESTS 1
 void int_printer(const void *value)
 {
     printf("%d", (((node_type *)value)->key));
@@ -17,6 +17,16 @@ int random_int(size_t excluded, int limit)
     return random_node_indx;
 }
 
+int *allocate_int_random_array(const unsigned int num_of_elem) 
+{ 
+  int *A = (int *)malloc(sizeof(int)*num_of_elem);
+  
+  srand(10);
+  for (unsigned int i = 0; i < num_of_elem; i++) {
+    A[i] = rand();
+  }
+  return A;
+}
 
 double run_test_heap(graph_type* graph)
 {
@@ -44,17 +54,20 @@ double run_test_array(graph_type* graph)
 
 int main(int argc, char *argv[])
 {
-    printf("Setting up test sets...");
+    printf("Setting up test sets...\n");
     fflush(stdout);
     srand(10);
+    FILE* f = fopen("benchmark/benchmark_data.txt", "w");
     printf("Size\tDijkstra Heap\tDijkstra Array\n");
-    for (size_t i = 5; i < NUM_TESTS + 5; i++)
+    fprintf(f, "Size\tDijkstra Heap\tDijkstra Array\n");
+    for (size_t i = 7; i < NUM_TESTS + 7; i++)
     {
-        int num_nodes = 2 << i;
+        size_t num_nodes = 2 << i;
         int num_of_adjacents = 3 * num_nodes / 4;
         int *keys = allocate_int_random_array(num_nodes);
-        graph_type *graph = create_graph(num_nodes, keys);
 
+        graph_type *graph = create_graph(num_nodes, keys);
+        
         //for each vertex, set up its adj list
         for (size_t j = 0; j < num_nodes; j++)
         {
@@ -77,8 +90,11 @@ int main(int argc, char *argv[])
         }
         double time_heap = run_test_heap(graph);
         double time_array = run_test_array(graph);
-        printf("2^5\t%d\t%d\n", time_heap, time_array);
+        printf("2^%ld\t%f\t%f\n", i, time_heap, time_array);
+        fprintf(f, "2^%ld\t%f\t%f\n", i, time_heap, time_array);
+        //print_graph(graph, int_printer);
         delete_graph(graph);
         free(keys);
     }
+    fclose(f);
 }
