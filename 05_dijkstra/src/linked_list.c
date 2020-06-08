@@ -30,7 +30,18 @@ void insert_new_node(linked_list* list, void* element, unsigned int weight)
 void delete_linked_list_node(linked_list* list, void* element)
 {
     list_node* current = list->head;
+    //if the head is the node we are looking for
+    if (current->element == element)    
+    {
+        list->head = current->next;
+        free(current);
+        return;
+    }
+    current = current->next;
     list_node* previous = NULL;
+
+    
+    
     while (current->element != element && current)
     {
         previous = current;

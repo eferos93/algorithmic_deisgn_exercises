@@ -1,4 +1,7 @@
 settings.json
+CMakeFiles/
+CMakeCache.txt
+Makefile
 # Prerequisites
 *.d
 

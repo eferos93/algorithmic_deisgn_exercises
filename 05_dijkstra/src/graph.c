@@ -126,23 +126,29 @@ node_type* extract_min_array(linked_list* nodes)
         before_current = current;
         current = current->next;
     }
-
-    if (before_min)
+    
+    //if the mean is in the head of the list
+    if (!before_min)
+    {
+        nodes->head = min->next;
+    }
+    else
     {
         before_min->next = min->next;
     }
     
     free(min);
     nodes->length--;
+    
     return min_node;
 }
 
-linked_list* build_array(void* elements, size_t num_of_elem, size_t elem_size)
+linked_list* build_array(node_type* elements, size_t num_of_elem, size_t elem_size)
 {
     linked_list* list = create_linked_list(elements, elem_size, 0);
     for (size_t i = 1; i < num_of_elem; i++)
     {
-        insert_new_node(list, elements+(i*elem_size), 0);
+        insert_new_node(list, (void*) elements+(i*elem_size), 0);
     }
     return list;
 }
@@ -152,7 +158,7 @@ void dijkstra_array(graph_type* g, node_type* source)
     initialise(g);
     source->distance_from_source = 0;
     
-    linked_list* queue = build_array((void *) g->nodes, g->num_nodes, sizeof(node_type));
+    linked_list* queue = build_array(g->nodes, g->num_nodes, sizeof(node_type));
 
     while (queue->length != 0)
     {
