@@ -1,7 +1,7 @@
 #include <graph.h>
 #include <time.h>
 //#include <common/test_set.h>
-#define NUM_TESTS 5
+#define NUM_TESTS 7
 void int_printer(const void *value)
 {
     printf("%d", (((node_type *)value)->key));
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
     for (size_t i = 7; i < NUM_TESTS + 7; i++)
     {
         size_t num_nodes = 2 << i;
-        int num_of_adjacents = 3 * num_nodes / 4;
+        int num_of_adjacents = 1 * num_nodes / 7;
         int *keys = allocate_int_random_array(num_nodes);
 
         graph_type *graph = create_graph(num_nodes, keys);
